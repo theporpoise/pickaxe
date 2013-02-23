@@ -60,6 +60,7 @@ abook1.price = abook1.price * 0.75  # discount price
 puts "New Price = #{abook1.price}"
 =end
 
+=begin
 #Virtual Attributes
 puts "Virtual Attributes"
 puts " Price          = #{book.price}"
@@ -67,8 +68,26 @@ puts " Price in cents = #{book.price_in_cents}"
 book.price_in_cents = 1234
 puts "#{book.price}"
 puts "#{book.price_in_cents}"
+=end
 
+# Attributes, Instance Variables, and Methods / Classes working iwth other classes
 
+class CsvReader
+  def initialize
+    @books_in_stock = []
+  end
+  def read_in_csv_data(csv_file_name)
+    CSV.foreach(csv_file_name, headers: true) do |row|
+      @books_in_stock << BookInStock.new(row["ISBN"], row["Amount"])
+    end
+  end
+  def total_value_in_stock
+
+  end
+  def number_of_each_isbn
+
+  end
+end
 
 
 

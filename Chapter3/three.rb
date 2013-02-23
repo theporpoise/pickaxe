@@ -91,6 +91,14 @@ class CsvReader
 end
 =end
 
+=begin
+ruby has 3 states of access control, public methods, protected methods, and private methods.  public
+is everyone, protected is just the class and subclasses, private is only the object itself.
+control the methods, and you control the object - control access to the methods and you
+control access to the object.  this is important for this like database objects :) as i've
+seen in web applications :)
+=end
+
 
 
 

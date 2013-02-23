@@ -1,5 +1,6 @@
 class BookInStock
-  attr_reader :isbn, :price
+  attr_reader :isbn
+  attr_accessor :price
   def initialize(isbn, price)
     @isbn = isbn
     @price = Float(price)
@@ -38,7 +39,13 @@ puts "ISBN  = #{book.isbn}"
 puts "Price = #{book.price}"
 
 
-
+puts "moving on to writable attributes"
+# Writable Attributes
+abook1 = BookInStock.new("isbn100", 33.8)
+puts "ISBN    = #{abook1.isbn}"
+puts "Price   = #{abook1.price}"
+abook1.price = abook1.price * 0.75  # discount price
+puts "New Price = #{abook1.price}"
 
 
 

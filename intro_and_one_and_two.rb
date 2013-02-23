@@ -221,9 +221,80 @@ end
 # Command-Line Arguements
 # cmd_line.rb file
 
+# Onward and Upward
+=begin
+
+What I did in this chapter:
+
+command line arguments, using the ARGV array and passing parameters when calling from console
+
+reading and writing:
+
+learnned to user the printf, which allows for substitution formating in the string
+
+iterators - a lot of objects have a .each method, which can then be passed a block.
+
+so array.each {|element| puts element } prints each element of the array
+
+quick array word assignment:  animals = %w( ant bee cat dog elk ) - no parenthesis needed
+
+passing code blocks:
+
+function_call { puts "something here" }
+when you do this it passes that code block into the function.  The function can then call
+that same code block using the yield method.  Also, you can pass parameters to teh yield
+method, so the original block you make can have parameter substitution, just include the parameters
+to substitute at the beginning of teh code block between pipes -
+{|param1 param2| puts "#{param1} and #{param2}"}
+
+both do / end and {} are code blocks.
+
+regex - stick it between /  regex here  /
+
+to check if something matches you use the match operator
+if steven =~ /steve/
+  puts "we got a match!"
+end
+
+also can do or with regex / regex here | or this regex /
+can use parenthesis /reg(ex|ular)/ matches regex or regular :)
+
+can pout logic on single line
+square = square * square whiel square < 1000 (known as a statement modifier)
+
+most statments in ruby return a value, so you can use it as a condition
+
+if, elsif, else
+
+statements terminated with end
+
+chaining conditions with and
+while weight < 100 and num_pallets <=30
+
+has assignment:
+
+my_hasheroo = {
+  cello: 'string'
+  baseball: 'ball'
+  soccer_ball: 'ball'
+}
+this is really the best way.  use symbols.  fuck the rocket.
+p works like puts but displays values like nil explicitly (and it's shorter :)
+
+ruby_array = ['one', 'two', 'etc']
+ruby_array = %w[ one two etc ]
+
+local variables - downcase and _
+global variables - $ sign
+Instance variables - @name
+class variables - @@name
+Constants and Class Names - FeetPerMile JazzSong - CapitalizedCamelCase
+
+statement definitions start with def and end with end
 
 
 
+=end
 
 
 

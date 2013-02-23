@@ -72,6 +72,7 @@ puts "#{book.price_in_cents}"
 
 # Attributes, Instance Variables, and Methods / Classes working iwth other classes
 
+=begin
 class CsvReader
   def initialize
     @books_in_stock = []
@@ -88,6 +89,7 @@ class CsvReader
 
   end
 end
+=end
 
 
 

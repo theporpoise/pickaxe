@@ -56,6 +56,20 @@ histogram = Hash.new(0)
 p histogram['ruby']
 histogram['ruby'] = histogram['ruby'] + 1
 p histogram['ruby']
+# Symbols
+
+# cool because you don't have to pre-declare and they are GUARANTEED to be unique
+
+section = {
+    cello: 'string',
+    clarinet: 'woodwind',
+    drum: 'percussion',
+    oboe: 'woodwind',
+    trumpet: 'brass',
+    violin: 'string'
+}
+
+puts "An oboe is a #{section[:oboe]}"
 
 
 

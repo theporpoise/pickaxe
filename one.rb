@@ -112,6 +112,86 @@ square = square * square while square < 1000
 =end
 
 # Regular Expressions
+=begin
+
+/Perl|Python/
+
+/P(erl|ython)/
+
+/ab+c/
+# matches a string containing an a, one or more b's, and a c
+
+/ab*c/
+=end
+# one a, one or more b's, c
+
+=begin
+\s - whitespace character
+
+\d - digit
+
+\w - any character in a typical word
+
+. - almost any character
+
+/\d\d:\d\d:\d\d/ # a time, such as 12:34:56
+/Perl.*Python/  # Perl, zero or more other chars, then Python
+/Perl Python/ # Perl, a space, and Python
+/Perl *Python/ # Perl, zero or more spaces, and Python
+/Perl +Python/ # Perl, one or more spaces, and Python
+/Perl\s+Python/ # Perl, whitespace characters, then Python
+/Ruby (Perl|Python)/ # Ruby, a space, and either Perl or Python
+
+=~  the match operator, matches a string against a regular expression.  If the pattern is found
+in the string it returns the starting position, otherwise, it returns nil.  This means it can be used
+as the condition in an if whiel statement.
+
+=end
+line = "I'm learning Ruby, which is not Perl or Python or Python again"
+if line =~ /Perl|Python/
+  puts "Scripting Language mentioned: #{line}"
+  puts line.sub(/Perl/, 'Ruby')
+  puts line.gsub(/Python/, 'Ruby')
+  puts #{line}
+end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

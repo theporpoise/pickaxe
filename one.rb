@@ -1,10 +1,10 @@
-song1 = Song.new("Ruby Tuesday")
-song2 = Song.new("Enveloped in Python")
+#song1 = Song.new("Ruby Tuesday")
+#song2 = Song.new("Enveloped in Python")
 
 puts "gin joint".length
 puts "Rick".index("c")
 puts 42.even?
-puts sam.play(song)
+#puts sam.play(song)
 
 def say_goodnight(name)
   result = "Good night, " + name
@@ -54,30 +54,8 @@ p inst_section['bassoon']
 
 histogram = Hash.new(0)
 p histogram['ruby']
-p histogram['ruby'] = histogram['ruby'] + 1
+histogram['ruby'] = histogram['ruby'] + 1
 p histogram['ruby']
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

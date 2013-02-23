@@ -206,8 +206,19 @@ puts " "
 ('a'..'e').each {|char| print char }
 
 # Reading and 'Riting'
+print "\n"
+printf("Number: %10.6f,\nString: %s\n", 1.23, "hello")
+=begin
 
+line = gets
+print line
 
+while line = gets
+  print line
+end
+=end
+
+# Command-Line Arguements
 
 
 

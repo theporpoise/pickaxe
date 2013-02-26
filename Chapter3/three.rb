@@ -176,6 +176,36 @@ public, protected, or private, now i see how proteced can be used ;).
 =end
 
 
+=begin
+Variables
+
+
+
+=end
+
+person = "Tim"
+puts "The object in 'person' is a #{person.class}"
+puts "The object has an id of #{person.object_id}"
+puts "and a value of '#{person}'"
+
+person1 = "Tim"
+person2 = person1
+person1[0] = 'J'
+puts "person1 is #{person1}"
+puts "person2 is #{person2}"
+
+person3 = "mike"
+person4 = person3.dup
+person3[0] = "D"
+puts "person3 is #{person3}"
+puts "person4 is #{person4}"
+
+person5 = "Sally"
+person6 = person5
+person5.freeze
+#person6[0] = "T"
+
+
 
 
 

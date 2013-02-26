@@ -99,6 +99,87 @@ control access to the object.  this is important for this like database objects 
 seen in web applications :)
 =end
 
+=begin
+Specifying Access Control
+Public, protected, or private - each can be used 2 ways.  with no arguements, they set teh default
+access control of subsequently defined methods.
+
+protected
+
+  def method # will be protected
+  end
+
+  def method2 "will be protected"
+  end
+
+private
+
+  def method3 "will be private"
+  end
+
+etc..
+
+Or you can use them as arguements to teh access control functions-
+
+public :method1, method4
+private :method 3
+=end
+
+class Account
+  attr_accessor :balance
+  def initialize(balance)
+    @balance = balance
+  end
+end
+
+class Transaction
+  def initialize(account_a, account_b)
+    @account_a = account_a
+    @account_b = account_b
+  end
+  private
+  def debit(account, amount)
+    account.balance -= amount
+  end
+  def credit(account, amount)
+    account.balance += amount
+  end
+  public
+  def transfer(amount)
+    debit(@account_a, amount)
+    credit(@account_b, amount)
+  end
+end
+
+
+savings = Account.new(100)
+puts savings.balance
+checking = Account.new(200)
+puts checking.balance
+trans = Transaction.new(checking, savings)
+trans.transfer(100)
+
+puts savings.balance, "   ", checking.balance
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

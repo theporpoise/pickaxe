@@ -161,6 +161,20 @@ trans.transfer(100)
 
 puts savings.balance, "   ", checking.balance
 
+=begin
+
+class Account
+  attr_reader :cleared_balance # accessor method 'cleared_balance'
+  protected :cleared_balance   # and make it protected
+  def greater_balance_than(other)
+    return @cleared_balance > other.cleared_balance
+  end
+end
+
+b/c it's protected, it's only available within Account objects.  Three levels of protection,
+public, protected, or private, now i see how proteced can be used ;).
+=end
+
 
 
 

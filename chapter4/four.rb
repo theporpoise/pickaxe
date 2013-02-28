@@ -48,15 +48,19 @@ p a
 =end
 
 =begin
-a = [1, 3, 5, 7, 9]
-a[2,2] = 'cat'
-a[2,0] = 'dog'
-a[1,1] = [9,8,7]
-a[0..3] = []
-#that's a cool way to get it to empty!
-a[5..6] = 99, 98
-p a
+creating a stack queue
+stack = []
+stack.push "red"
+stack.push 'green'
+stack.push 'blue'
+p stack
+puts stack.pop
+puts stack.pop
+puts stack.pop
+p stack
 =end
+
+
 
 
 

@@ -202,6 +202,13 @@ a = ["H", "A", "L"].map {|x| x.succ }
 puts a
 
 
+f = File.open("../Chapter3/data.csv")
+f.each do |line|
+  puts "The line is: #{line}"
+end
+f.close
+
+
 
 
 

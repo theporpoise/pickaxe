@@ -71,6 +71,20 @@ p queue.first(40)
 p queue.last(1)
 =end
 
+h = {
+    dog: 'canine',
+    cat: 'feline',
+    donkey: 'asinine'
+}
+
+p h.length
+p h[:dog]
+p h[:cow] = 'bovine'
+p h[:twelve] = 'dodecine'
+h[:cat] = 99
+p h
+
+
 
 
 

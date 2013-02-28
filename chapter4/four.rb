@@ -180,6 +180,18 @@ def fib_up_to(max)
 end
 fib_up_to(1000) {|f| print f, ","}
 
+class Array
+  def find
+    for i in 0...size
+      value = self[i]
+      return value if yield(value)
+    end
+    return nil
+  end
+end
+puts " "
+puts [1, 3, 5, 7, 9].find {|v| v*v > 30 }
+
 
 
 

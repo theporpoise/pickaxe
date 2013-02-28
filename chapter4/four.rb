@@ -88,6 +88,7 @@ p h
 #Ruby remembers the order you add things to a hash
 =end
 
+=begin
 
 def words_from_string(string)
   string.downcase.scan(/[\w']+/)
@@ -116,6 +117,7 @@ for i in 0...5
   puts "#{word}: #{count}"
 end
 p sorted
+=end
 
 
 

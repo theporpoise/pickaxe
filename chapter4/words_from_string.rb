@@ -15,6 +15,8 @@ end
 #p count_frequency(words_from_string("But I didn't inhale, he said (emphatically)"))
 #p count_frequency(words_from_string("Sparky the cat sat on the mat"))
 
+=begin
+not necessary here, just trying to test the code itself.
 raw_text = File.read("para.txt")
 word_list = words_from_string(raw_text)
 counts = count_frequency(word_list)
@@ -25,3 +27,4 @@ for i in 0...5
   count = top_five[i][1]
   puts "#{word}: #{count}"
 end
+=end

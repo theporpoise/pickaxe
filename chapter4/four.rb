@@ -88,7 +88,7 @@ p h
 #Ruby remembers the order you add things to a hash
 =end
 
-=begin
+
 
 def words_from_string(string)
   string.downcase.scan(/[\w']+/)
@@ -111,13 +111,16 @@ word_list = words_from_string(raw_text)
 counts = count_frequency(word_list)
 sorted = counts.sort_by {|word, count| count}
 top_five = sorted.last(5)
+=begin
 for i in 0...5
   word = top_five[i][0]
   count = top_five[i][1]
   puts "#{word}: #{count}"
 end
-p sorted
 =end
+#p sorted
+top_five.each { |word, count| puts "#{word}: #{count}" }
+
 
 
 

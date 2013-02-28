@@ -193,6 +193,7 @@ end
 puts " "
 puts [1, 3, 5, 7, 9].find {|v| v*v > 30 }
 =end
+=begin
 
 [1, 3, 5, 7, 9].each{|i| puts i}
 
@@ -203,11 +204,13 @@ puts a
 
 
 f = File.open("../Chapter3/data.csv")
-f.each do |line|
-  puts "The line is: #{line}"
-end
+f.each {|line| puts line }
 f.close
+=end
 
+f = File.open("../Chapter3/data.csv")
+f.each_with_index {|line, index| puts "Line #{index} is: #{line}"}
+f.close
 
 
 

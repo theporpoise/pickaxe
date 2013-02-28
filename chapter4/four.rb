@@ -55,6 +55,7 @@ p stack
 
 =end
 
+=begin
 #push and shift to create a FIFO queue
 queue = [1, 2, 3, 4, 5, 6]
 queue.push "red"
@@ -64,6 +65,11 @@ puts queue.shift
 p queue
 p queue.shift
 p queue
+
+
+p queue.first(40)
+p queue.last(1)
+=end
 
 
 

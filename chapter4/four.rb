@@ -89,6 +89,7 @@ p h
 =end
 
 
+=begin
 
 def words_from_string(string)
   string.downcase.scan(/[\w']+/)
@@ -111,15 +112,32 @@ word_list = words_from_string(raw_text)
 counts = count_frequency(word_list)
 sorted = counts.sort_by {|word, count| count}
 top_five = sorted.last(5)
-=begin
+
+
 for i in 0...5
   word = top_five[i][0]
   count = top_five[i][1]
   puts "#{word}: #{count}"
 end
-=end
+
+
 #p sorted
 top_five.each { |word, count| puts "#{word}: #{count}" }
+=end
+sum = 0.0
+some_array = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+some_array.each do |value|
+  sum+= value
+  puts value / sum
+end
+sum = 0.0
+some_array.each_index {|i| some_array[i] *= 3}
+p some_array
+
+some_array.each do |value|
+  sum+= value
+  puts value / sum
+end
 
 
 

@@ -47,7 +47,16 @@ a[1, 0] = ['steven', 'bob', 'alex']
 p a
 =end
 
-
+=begin
+a = [1, 3, 5, 7, 9]
+a[2,2] = 'cat'
+a[2,0] = 'dog'
+a[1,1] = [9,8,7]
+a[0..3] = []
+#that's a cool way to get it to empty!
+a[5..6] = 99, 98
+p a
+=end
 
 
 

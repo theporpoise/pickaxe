@@ -208,10 +208,16 @@ f.each {|line| puts line }
 f.close
 =end
 
+=begin
 f = File.open("../Chapter3/data.csv")
 f.each_with_index {|line, index| puts "Line #{index} is: #{line}"}
 f.close
+=end
 
+p [1, 3, 5, 7].inject(2) {|sum, element| sum+element}
+p [1, 3, 5, 7].inject(1) {|product, element| product*element}
+
+p [1,3,5,7].inject(:+)
 
 
 

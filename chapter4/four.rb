@@ -71,6 +71,7 @@ p queue.first(40)
 p queue.last(1)
 =end
 
+=begin
 h = {
     dog: 'canine',
     cat: 'feline',
@@ -84,7 +85,8 @@ p h[:twelve] = 'dodecine'
 h[:cat] = 99
 p h
 
-
+#Ruby remembers the order you add things to a hash
+=end
 
 
 

@@ -164,6 +164,7 @@ puts sum
 puts square
 =end
 
+=begin
 def three_times
   yield
   yield
@@ -191,6 +192,14 @@ class Array
 end
 puts " "
 puts [1, 3, 5, 7, 9].find {|v| v*v > 30 }
+=end
+
+[1, 3, 5, 7, 9].each{|i| puts i}
+
+a = ["H", "A", "L"].collect {|x| x.succ }
+puts a
+a = ["H", "A", "L"].map {|x| x.succ }
+puts a
 
 
 

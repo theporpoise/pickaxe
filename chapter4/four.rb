@@ -222,6 +222,7 @@ p [1,3,5,7].inject(:+)
 =end
 
 
+=begin
 a = [1, 3, 'cat']
 h = {dog: "canine", fox: "vulpine"}
 
@@ -244,6 +245,7 @@ loop do
   puts "#{short_enum.next} - #{long_enum.next}"
 end
 
+=end
 
 
 

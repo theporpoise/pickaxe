@@ -214,10 +214,66 @@ f.each_with_index {|line, index| puts "Line #{index} is: #{line}"}
 f.close
 =end
 
+=begin
 p [1, 3, 5, 7].inject(2) {|sum, element| sum+element}
 p [1, 3, 5, 7].inject(1) {|product, element| product*element}
 
 p [1,3,5,7].inject(:+)
+=end
+
+
+a = [1, 3, 'cat']
+h = {dog: "canine", fox: "vulpine"}
+
+enum_a = a.to_enum
+enum_h = h.enum_for
+
+p enum_a.next
+p enum_h.next
+p enum_a.next
+p enum_h.next
+
+a = [1, 3, "bigcat"]
+enum_a = a.each
+p enum_a.next
+p enum_a.next
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

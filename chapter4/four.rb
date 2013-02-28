@@ -54,7 +54,6 @@ puts stack.pop
 p stack
 
 =end
-
 =begin
 #push and shift to create a FIFO queue
 queue = [1, 2, 3, 4, 5, 6]
@@ -70,7 +69,6 @@ p queue
 p queue.first(40)
 p queue.last(1)
 =end
-
 =begin
 h = {
     dog: 'canine',
@@ -87,8 +85,6 @@ p h
 
 #Ruby remembers the order you add things to a hash
 =end
-
-
 =begin
 
 def words_from_string(string)
@@ -124,6 +120,7 @@ end
 #p sorted
 top_five.each { |word, count| puts "#{word}: #{count}" }
 =end
+=begin
 sum = 0.0
 some_array = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 some_array.each do |value|
@@ -139,7 +136,31 @@ some_array.each do |value|
   puts value / sum
 end
 
+=end
 
+sum = 0
+[1, 2, 3, 4].each do |value|
+  square = value * value
+  sum += square
+end
+puts sum
+
+sum1 = 0
+[1, 2, 3, 4].each {|value| sum1 += (value*value)}
+puts sum1
+
+value = "some shape"
+[1, 2].each {|value| puts value}
+puts value
+
+square = "something else"
+sum = 0
+[1, 2, 3, 4].each do |value; square|
+  square = value * value
+  sum += square
+end
+puts sum
+puts square
 
 
 

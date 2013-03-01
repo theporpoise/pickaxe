@@ -101,8 +101,7 @@ p et.who_am_i?
 p ph.name
 
 =end
-
-
+=begin
 class Person
   include Comparable
   attr_reader :name
@@ -127,6 +126,9 @@ end
 
 puts "Sorted List"
 puts [p1, p2, p3].sort
+=end
+
+
 
 
 

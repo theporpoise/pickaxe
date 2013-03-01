@@ -364,6 +364,7 @@ rebo = Proc.new { |allan| puts "Who daq #{allan} now fool" }
 rebo.call("Allan")
 =end
 
+=begin
 def n_times(thing)
   lambda { |n| thing * n }
 end
@@ -375,10 +376,45 @@ p p1.call(4)
 p2 = n_times("Hello ")
 p p2.call(3)
 
+# effectively, the block gets created when called and saves the parameters
+# used when it was created.
 
+def power_proc_generator
+  value = 1
+  lambda { value += value }
+end
+power_proc = power_proc_generator
+p power_proc.call
+p power_proc.call
+p power_proc.call
 
+=end
 
+=begin
+# 3 ways to create block objects, lambda, Proc.new, and ->
 
+proc1 = -> arg { puts "In proc1 with #{arg}" }
+proc2 = -> arg1, arg2 { puts "In proc2 with #{arg1} and #{arg2}" }
+proc3 = ->(arg1, arg2) {puts "In proc3 with #{arg1} and #{arg2}" }
+
+proc1.call "ant"
+proc2.call "bee", "hive"
+proc3.call "dog", "poodle"
+
+def my_if(condition, then_clause, else_clause)
+  if condition
+    then_clause.call
+  else
+    else_clause.call
+  end
+end
+
+5.times do |val|
+  my_if val < 3,
+        -> { puts "#{val} is small" },
+        -> { puts "#{val} is big" }
+end
+=end
 
 
 

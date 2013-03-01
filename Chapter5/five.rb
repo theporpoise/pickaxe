@@ -128,14 +128,33 @@ puts "Sorted List"
 puts [p1, p2, p3].sort
 =end
 
+=begin
 # ruby collection class - array, hash, etc. - traverse, sort, etc.
 
 # module enumerable is what does all those cool collection class things
 # must define an iterator called each which returns the elements of your
 #collection in turn.
 
+p [1, 2, 3, 4, 5].inject(:+)
+p ('a'..'m').inject(:+)
 
 
+class VowelFinder
+  include Enumerable
+  def initialize(string)
+    @string = string
+  end
+  def each
+    @string.scan(/[aeiou]/) do |vowel|
+      yield vowel
+    end
+  end
+end
+
+vf = VowelFinder.new("the quick brown fox jumped up up up ")
+
+p vf.inject(:+)
+=end
 
 
 

@@ -432,6 +432,7 @@ end
 =end
 
 
+=begin
 proc1 = lambda do |a, *b, &block|
   puts "a = #{a.inspect}"
   puts "b = #{b.inspect}"
@@ -449,7 +450,12 @@ end
 proc2.call('cat', 'dog', 'mouse', 'traffic') {puts "the block block"}
 
 
+containers, blocks and iterators are core concepts in ruby.  You will write less looping
+constructs and instead write classes that support iteration over their contents.
 
+blocks are also closures - which methods are not, so they are more versatile!
+
+=end
 
 
 

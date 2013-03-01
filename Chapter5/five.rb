@@ -156,6 +156,7 @@ vf = VowelFinder.new("the quick brown fox jumped up up up ")
 p vf.inject(:+)
 =end
 
+=begin
 
 module Summable
   def sum
@@ -173,7 +174,41 @@ end
 puts [1, 2, 3, 4, 50].sum
 puts ('a'..'z').sum
 
+=end
 
+=begin
+module Observable
+  def observers
+    @observer_list ||= []
+  end
+  def add_observer(obj)
+    observers << obj
+  end
+  def notify_observers
+    observers.each {|o| o.update }
+  end
+end
+
+module Test
+  State = {}
+  def state=(value)
+    State[object_id] = value
+  end
+  def state
+    State[object_id]
+  end
+end
+
+class Client
+  include Test
+end
+
+c1 = Client.new
+c2 = Client.new
+p c1.state = 'cat'
+p c2.state = 'dog'
+
+=end
 
 
 

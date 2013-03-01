@@ -128,9 +128,11 @@ puts "Sorted List"
 puts [p1, p2, p3].sort
 =end
 
+# ruby collection class - array, hash, etc. - traverse, sort, etc.
 
-
-
+# module enumerable is what does all those cool collection class things
+# must define an iterator called each which returns the elements of your
+#collection in turn.
 
 
 

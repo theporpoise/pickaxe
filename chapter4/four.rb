@@ -269,6 +269,7 @@ enum_good = (1..10).enum_for(:each_slice, 3)
 p enum_good.to_a
 =end
 
+=begin
 triangular_numbers = Enumerator.new do |yielder|
   number = 0
   count = 1
@@ -280,6 +281,61 @@ triangular_numbers = Enumerator.new do |yielder|
 end
 
 5.times { puts triangular_numbers.next }
+
+p triangular_numbers.first(5)
+
+# count and select will try to read the whole enumeration before returning
+# a result
+
+def infinite_select(enum, &block)
+  Enumerator.new do |yielder|
+    enum.each do |value|
+      yielder.yield(value) if block.call(value)
+    end
+  end
+end
+
+p infinite_select(triangular_numbers) {|val| val % 10 == 0}.first(5)
+
+
+
+
+class Enumerator
+  def infinite_select(&block)
+    Enumerator.new do |yielder|
+      self.each do |value|
+        yielder.yield(value) if block.call(value)
+      end
+    end
+  end
+end
+
+p triangular_numbers
+  .infinite_select {|val| val % 10 ==0 }
+  .infinite_select {|val| val.to_s =~ /3/ }
+  .first(10)
+=end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

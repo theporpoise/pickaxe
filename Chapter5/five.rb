@@ -4,9 +4,6 @@ easier to maintain b/c if you change it once it then is updated everywhere.
 
 two different mechanisms for sharing are class-level inheritance and mixins.
 
-=end
-
-
 class Parent
   def say_hello
     puts "Hello from #{self}"
@@ -28,3 +25,18 @@ p "The superclass of Parent is #{Parent.superclass}"
 p "The superclass of Object is #{Object.superclass}"
 p "The superclass of BasicObject is #{BasicObject.superclass.inspect}"
 
+
+=end
+
+
+class Person
+  def initialize(name)
+    @name = name
+  end
+  def to_s
+    "Person named #{@name}"
+  end
+end
+
+p = Person.new("Michael")
+puts p

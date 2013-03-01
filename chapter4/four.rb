@@ -247,6 +247,7 @@ end
 
 =end
 
+=begin
 result = []
 [ 'a', 'b', 'c'].each_with_index {|item, index| result << [item, index]}
 p result
@@ -255,10 +256,18 @@ resulter = []
 "cat".each_char.each_with_index {|item, index| resulter << [item, index] }
 p resulter
 
+resultery = []
+"cat".each_char.with_index {|item, index| resultery << [item, index] }
+p resultery
 
-
-
-
+enum = "cat".enum_for(:each_char)
+p enum.to_a
+final = []
+enum.with_index {|item, index| final << [item, index] }
+p final
+enum_good = (1..10).enum_for(:each_slice, 3)
+p enum_good.to_a
+=end
 
 
 

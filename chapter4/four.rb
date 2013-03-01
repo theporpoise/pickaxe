@@ -53,8 +53,6 @@ puts stack.pop
 puts stack.pop
 p stack
 
-=end
-=begin
 #push and shift to create a FIFO queue
 queue = [1, 2, 3, 4, 5, 6]
 queue.push "red"
@@ -68,8 +66,6 @@ p queue
 
 p queue.first(40)
 p queue.last(1)
-=end
-=begin
 h = {
     dog: 'canine',
     cat: 'feline',
@@ -84,8 +80,6 @@ h[:cat] = 99
 p h
 
 #Ruby remembers the order you add things to a hash
-=end
-=begin
 
 def words_from_string(string)
   string.downcase.scan(/[\w']+/)
@@ -119,8 +113,6 @@ end
 
 #p sorted
 top_five.each { |word, count| puts "#{word}: #{count}" }
-=end
-=begin
 sum = 0.0
 some_array = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 some_array.each do |value|
@@ -136,9 +128,7 @@ some_array.each do |value|
   puts value / sum
 end
 
-=end
 
-=begin
 sum = 0
 [1, 2, 3, 4].each do |value|
   square = value * value
@@ -162,9 +152,7 @@ sum = 0
 end
 puts sum
 puts square
-=end
 
-=begin
 def three_times
   yield
   yield
@@ -192,8 +180,6 @@ class Array
 end
 puts " "
 puts [1, 3, 5, 7, 9].find {|v| v*v > 30 }
-=end
-=begin
 
 [1, 3, 5, 7, 9].each{|i| puts i}
 
@@ -206,23 +192,17 @@ puts a
 f = File.open("../Chapter3/data.csv")
 f.each {|line| puts line }
 f.close
-=end
 
-=begin
 f = File.open("../Chapter3/data.csv")
 f.each_with_index {|line, index| puts "Line #{index} is: #{line}"}
 f.close
-=end
 
-=begin
 p [1, 3, 5, 7].inject(2) {|sum, element| sum+element}
 p [1, 3, 5, 7].inject(1) {|product, element| product*element}
 
 p [1,3,5,7].inject(:+)
-=end
 
 
-=begin
 a = [1, 3, 'cat']
 h = {dog: "canine", fox: "vulpine"}
 
@@ -245,9 +225,7 @@ loop do
   puts "#{short_enum.next} - #{long_enum.next}"
 end
 
-=end
 
-=begin
 result = []
 [ 'a', 'b', 'c'].each_with_index {|item, index| result << [item, index]}
 p result
@@ -267,9 +245,7 @@ enum.with_index {|item, index| final << [item, index] }
 p final
 enum_good = (1..10).enum_for(:each_slice, 3)
 p enum_good.to_a
-=end
 
-=begin
 triangular_numbers = Enumerator.new do |yielder|
   number = 0
   count = 1
@@ -318,7 +294,6 @@ p triangular_numbers
 blocks are often used as targets of iterators.  they are cool filters for looping
 methods for instance.
 
-=end
 
 
 class File
@@ -347,8 +322,45 @@ class File
     return result
   end
 end
+=end
 
+# blocks are like anonymous methods, but there's more to them than that.  blocks
+# can be objects, stored in variables, passed around, and invoked later
 
+# objects get assigned to object class Proc when pased with &prefixedvariable
+
+class ProcExample
+  def pass_in_block(&action)
+    @stored_proc = action
+  end
+  def use_proc(parameter)
+    @stored_proc.call(parameter)
+  end
+end
+
+eg = ProcExample.new
+eg.pass_in_block { |param| puts "The parameter is #{param}" }
+eg.use_proc(99)
+
+# a call method on a proc object invokes the code in the original block
+# this a great way to implement call backs, dispatch tables, and so on.
+
+def create_block_object(&block)
+  block
+end
+
+bo = create_block_object { |param| puts "You called me with #{param} " }
+bo.call(99)
+bo.call("catfishery")
+# two built in methods convert a block to an object - lambda and Proc.new take
+# a block and return an object of class Proc.
+
+bo = lambda { |param| puts "What up #{param}" }
+bo.call(99)
+bo.call("caterpillar")
+
+rebo = Proc.new { |allan| puts "Who daq #{allan} now fool" }
+rebo.call("Allan")
 
 
 

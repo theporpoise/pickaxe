@@ -247,8 +247,13 @@ end
 
 =end
 
+result = []
+[ 'a', 'b', 'c'].each_with_index {|item, index| result << [item, index]}
+p result
 
-
+resulter = []
+"cat".each_char.each_with_index {|item, index| resulter << [item, index] }
+p resulter
 
 
 

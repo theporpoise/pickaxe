@@ -269,7 +269,17 @@ enum_good = (1..10).enum_for(:each_slice, 3)
 p enum_good.to_a
 =end
 
+triangular_numbers = Enumerator.new do |yielder|
+  number = 0
+  count = 1
+  loop do
+    number += count
+    count += 1
+    yielder.yield number
+  end
+end
 
+5.times { puts triangular_numbers.next }
 
 
 

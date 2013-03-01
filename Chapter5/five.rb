@@ -157,6 +157,22 @@ p vf.inject(:+)
 =end
 
 
+module Summable
+  def sum
+    inject(:+)
+  end
+end
+class Array
+  include Summable
+end
+
+class Range
+  include Summable
+end
+
+puts [1, 2, 3, 4, 50].sum
+puts ('a'..'z').sum
+
 
 
 

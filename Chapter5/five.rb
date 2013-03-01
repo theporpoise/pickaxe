@@ -29,6 +29,7 @@ p "The superclass of BasicObject is #{BasicObject.superclass.inspect}"
 =end
 
 
+=begin
 class Person
   def initialize(name)
     @name = name
@@ -66,3 +67,78 @@ end
 
 server = LogServer.new
 server.start.join
+=end
+
+=begin
+Modules provide a namespace and prevent name clashes
+Modules support the mixin facility.
+
+Module methods are called by preceding teh method name with the modules name
+and then a period, like Module.
+
+=end
+
+module Debug
+  attr_accessor :name
+  def initialize(name)
+    @name = name
+  end
+  def who_am_i?
+    "#{self.class.name} (\##{self.object_id}): #{@name.to_s}"
+  end
+end
+class Phonograph
+  include Debug
+end
+
+class EightTrack
+  include Debug
+end
+
+ph = Phonograph.new("West End Blues")
+et = EightTrack.new("Surrealistic Pillow")
+
+p ph.who_am_i?
+p et.who_am_i?
+p ph.name
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

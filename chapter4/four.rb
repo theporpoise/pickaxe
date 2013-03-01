@@ -314,11 +314,39 @@ p triangular_numbers
   .infinite_select {|val| val % 10 ==0 }
   .infinite_select {|val| val.to_s =~ /3/ }
   .first(10)
+
+blocks are often used as targets of iterators.  they are cool filters for looping
+methods for instance.
+
 =end
 
 
+class File
+  def self.open_and_process(*args)
+    f = File.open(*args)
+    yield f
+    f.close()
+  end
+end
 
+File.open_and_process("../Chapter3/data.csv", "r") do |file|
+  while line = file.gets
+    puts line
+  end
+end
 
+# shifts the responsibility of closing an open file from the user of
+# file objects back to file objects themselves.
+
+class File
+  def self.my_open(*args)
+    if block_given?
+      result = yield file
+      file.close
+    end
+    return result
+  end
+end
 
 
 

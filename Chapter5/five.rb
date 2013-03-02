@@ -210,6 +210,10 @@ p c2.state = 'dog'
 
 =end
 
+# I'm a big fan of composition programming instead of inheritance programming - cool.
+# reserve inheritance for times when it's justified.  otehrwise try exploring
+# mixins ( include ModuleName ) gives you more options, and it's decoupled!
+
 
 
 

@@ -33,5 +33,19 @@ f.each do |line|
   puts Integer(v1) + Integer(v2)
 end
 
+p (1 + 2).class
+p (1 + 2.0).class
+p (1.0 + 2).class
+p (1.0 + Complex(1, 2)).class
+p (1 + Rational(2,3)).class
+p (1.0 + Rational(2,3)).class
+
+p 1 / 2.0
+p 1 / 2.0
+p 1/ 2
+
+require 'mathn'
+p 22/7
+p Complex::I * Complex::I
 
 

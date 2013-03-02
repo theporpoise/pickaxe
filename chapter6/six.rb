@@ -1,3 +1,4 @@
+=begin
 # STandard Types - chapter 6 - stuff i prolly know :)
 
 num = 81
@@ -20,3 +21,17 @@ p Rational("3/4") * Rational("2/3")
 
 p Complex(1, 2) * Complex(3, 4)
 p Complex("1+2i") * Complex("3+4i")
+=end
+
+
+#all numbers are objects and respond to a variety of messages, so num.abs, not abs(num)
+
+ f = File.open('some_file.txt')
+
+f.each do |line|
+  v1, v2 = line.split
+  puts Integer(v1) + Integer(v2)
+end
+
+
+

@@ -77,5 +77,14 @@ puts "now is #{ def the(a)
                 the('time')
                 } for all good coders..."
 
+# you can make your own string delimeters using %q and %Q
+
+p %q/general single-quoted string/
+p %Q!general double-quoted string!
+p %Q{Seconds/year: #{24*60*60*365}}
+
+p %!another general string!
+p %{Seconds/100 years: #{24*60*60*365*100}}
+
 
 

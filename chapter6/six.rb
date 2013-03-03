@@ -50,6 +50,7 @@ p 22/7
 p Complex::I * Complex::I
 =end
 
+=begin
 #Looping using numbers
 # class Numeric includes the numbers (1, 2, 3) and has methods like .times, .upto,
 # .downto. and .step
@@ -61,4 +62,20 @@ p Complex::I * Complex::I
 
 puts "\n\n"
 10.downto(7).with_index {|num, index| puts "#{index}: #{num}"}
+=end
+
+puts 'escape using "\\"'
+puts 'That\'s right'
+
+puts "Seconds/day: #{24*60*60}"
+puts "#{'Ho! ' * 3}Merry Christmas"
+puts "This is line #$."
+
+puts "now is #{ def the(a)
+                  'the ' + a
+                end
+                the('time')
+                } for all good coders..."
+
+
 

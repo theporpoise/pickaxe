@@ -130,11 +130,17 @@ File.open("songdata.txt") do |song_file|
 end
 =end
 
+a =  (1..10).to_a
+b =  'a'..'z'
+c = 0..."cat".length
+d = ('bar'..'bat').to_a
+enum = ('bar'..'bat').to_enum
 
 
+p a, b, c, d, enum, enum.next, enum.next
 
-
-
+digits = 0..9
+p digits.include?(5)
 
 
 

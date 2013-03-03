@@ -22,6 +22,7 @@ p Rational("3/4") * Rational("2/3")
 p Complex(1, 2) * Complex(3, 4)
 p Complex("1+2i") * Complex("3+4i")
 =end
+=begin
 
 
 #all numbers are objects and respond to a variety of messages, so num.abs, not abs(num)
@@ -47,5 +48,15 @@ p 1/ 2
 require 'mathn'
 p 22/7
 p Complex::I * Complex::I
+=end
+
+#Looping using numbers
+# class Numeric includes the numbers (1, 2, 3) and has methods like .times, .upto,
+# .downto. and .step
+
+3.times { puts "X" }
+1.upto(5) { |i| print i, " " }
+99.downto(95) {|i| print i, " " }
+50.step(80, 5) { |i| print i, " " }
 
 

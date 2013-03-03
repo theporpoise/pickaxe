@@ -86,5 +86,18 @@ p %Q{Seconds/year: #{24*60*60*365}}
 p %!another general string!
 p %{Seconds/100 years: #{24*60*60*365*100}}
 
+string = <<END_OF_STRING
+The body of the string
+is the input lines up to
+one starting with the same
+text that followed the '<<'
+END_OF_STRING
 
+p string
+
+print <<-String1, <<-String2
+  Concat
+  String1
+    enate
+    String2
 

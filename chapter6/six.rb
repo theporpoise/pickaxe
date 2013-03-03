@@ -1,3 +1,5 @@
+
+
 =begin
 # STandard Types - chapter 6 - stuff i prolly know :)
 
@@ -64,6 +66,7 @@ puts "\n\n"
 10.downto(7).with_index {|num, index| puts "#{index}: #{num}"}
 =end
 
+=begin
 puts 'escape using "\\"'
 puts 'That\'s right'
 
@@ -95,9 +98,53 @@ END_OF_STRING
 
 p string
 
-print <<-String1, <<-String2
+a, b = <<-String1, <<-String2
   Concat
   String1
     enate
     String2
+
+p a
+p b
+=end
+
+
+##put this at beginning of file to change encoding - #encoding: utf-8
+plain_string = "dog"
+puts "Encoding of #{plain_string.inspect} is #{plain_string.encoding}"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 

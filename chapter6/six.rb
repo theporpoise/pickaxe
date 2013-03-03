@@ -59,4 +59,6 @@ p Complex::I * Complex::I
 99.downto(95) {|i| print i, " " }
 50.step(80, 5) { |i| print i, " " }
 
+puts "\n\n"
+10.downto(7).with_index {|num, index| puts "#{index}: #{num}"}
 

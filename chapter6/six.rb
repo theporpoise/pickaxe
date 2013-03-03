@@ -108,12 +108,27 @@ p a
 p b
 =end
 
+=begin
 
 ##put this at beginning of file to change encoding - #encoding: utf-8
 plain_string = "dog"
 puts "Encoding of #{plain_string.inspect} is #{plain_string.encoding}"
 
+#Strin is prolly largest build-in Ruby class, with 100 standard methods.
 
+Song = Struct.new(:title, :name, :length)
+File.open("songdata.txt") do |song_file|
+  songs = []
+  song_file.each do |line|
+    #puts line
+    file_name, length, name, title = line.chomp.split(/\s*\|\s*/)
+    name.squeeze!(" ")
+    mins, sec = length.scan(/\d+/)
+    songs << Song.new(title, name, mins.to_i*60 + sec.to_i)
+  end
+  puts songs
+end
+=end
 
 
 
